@@ -5,8 +5,7 @@ Given /The following movies exist/ do |table|
 
 Then(/^the director of "(.*?)" should be "(.*?)"$/) do |arg1, arg2|
   #arg1.should_be(director=>arg2)
-  movie = Movie.find_by_title(arg1)
-  assert arg2 == movie.director
+  movie = Movie.
 end
 
 

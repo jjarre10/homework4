@@ -1,16 +1,16 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/saasbook/Documents/HW4/rottenpotatoes/app/controllers/application_controller.rb": [
+      "/home/saasbook/Documents/rottenpotatoes/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/saasbook/Documents/HW4/rottenpotatoes/app/helpers/application_helper.rb": [
+      "/home/saasbook/Documents/rottenpotatoes/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Documents/HW4/rottenpotatoes/app/helpers/movies_helper.rb": [
+      "/home/saasbook/Documents/rottenpotatoes/app/helpers/movies_helper.rb": [
         1,
         null,
         1,
@@ -18,7 +18,7 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/HW4/rottenpotatoes/app/controllers/movies_controller.rb": [
+      "/home/saasbook/Documents/rottenpotatoes/app/controllers/movies_controller.rb": [
         1,
         null,
         1,
@@ -87,7 +87,7 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/HW4/rottenpotatoes/app/models/movie.rb": [
+      "/home/saasbook/Documents/rottenpotatoes/app/models/movie.rb": [
         1,
         1,
         0,
@@ -95,6 +95,6 @@
         null
       ]
     },
-    "timestamp": 1398472204
+    "timestamp": 1398474794
   }
 }
