@@ -20,10 +20,10 @@ module NavigationHelpers
 
     when /^the home\s?page$/ 
       visit path_to(page_name)
+      
     when /^the edit page for "(.*)"/
 	 id = movieID($1)
 	 "/movies/#{id}"
-    
     	 
 
     # Add more mappings here.

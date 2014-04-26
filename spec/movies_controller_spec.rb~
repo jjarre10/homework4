@@ -1,7 +1,14 @@
+require 'spec_helper'
+
+describe TestController, :type => :controller do
 describe MoviesController do
-  before :each do #Runs before each test
-    @movie = Movie.new {:title=> "Star Wars", :rating=> "PG", :release_date=> "1977-05-25"} 
+  describe 'edit page for appropriate Movie' do
+    it 'When I got to the edit page for the Movie, it should be loaded' do
+      mock = mock('Movie')
+      Movie.should_receive(:find).with('13').and_return(mock)
+      get :edit, {:id => '13'}
+      response.should be_success
+    end
   end
-  
-  #describe 
+end
 end

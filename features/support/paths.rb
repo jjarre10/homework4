@@ -25,6 +25,8 @@ module NavigationHelpers
 	 id = movieID($1)
 	 "/movies/#{id}"
     
+    when /^the details page for "(.*)"$/       
+      movie_path(Movie.find_by_title($1))
     	 
 
     # Add more mappings here.
