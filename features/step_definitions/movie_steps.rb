@@ -3,23 +3,29 @@ Given(/^the following movies exist:$/) do |table|
     Movie.create!(movie)
   end
 end
+
+##Scenario 1
+
+When(/^I go to the (.*?) for "(.*?)"$/) do |page_name, movie|
+  movie = Movie.find_by_title(movie)
+  path_to(page_name, movie[:id] )
+end
+
+And(/^I fill in "(.*?)" with "(.*?)"$/) do |field, value|
+  fill_in(field,:with => value)
+end
+
+And(/^I press "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
 Then(/^the director of "(.*?)" should be "(.*?)"$/) do |arg1, arg2|
   #arg1.should_be(director=>arg2)
   movie = Movie.find_by_title(arg1)
   assert arg2 == movie.director
 end
 
-When(/^I go to the (.*?) for "(.*?)"$/) do |movie|
-  path_to(movie)
-end
-
-When(/^I fill in "(.*?)" with "(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I press "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
+##Scenario 2
 
 Given(/^I am on the details page for "(.*?)"$/) do |arg1|
   pending # express the regexp above with the code you wish you had
