@@ -49,6 +49,10 @@ describe MoviesController, :type => :controller do
   end
   
   describe 'Filter/sort movies' do
+    it 'Sort by release date' do
+      get :index, {:sort => 'release_date'}
+      response.should redirect_to(movies_path(:sort => 'release_date'))
+    end
     it 'Sort by titles' do
       get :index, {:sort => 'title'} #get the index, call sort
       response.should redirect_to(movies_path(:sort => 'title')) #redirect after calling sort

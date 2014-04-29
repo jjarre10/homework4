@@ -27,7 +27,7 @@ Rottenpotatoes::Application.routes.draw do
   #   end
   match 'movies/:id/similar' => 'movies#similar'
   root :to => redirect('/movies')
-
+end
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

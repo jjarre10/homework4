@@ -14,11 +14,12 @@ module NavigationHelpers
     @page_name = page_name 
     @movie = movieID
     case @page_name
-      when /home\s?page$/
-        "/movies"
-      
-      when /edit\s?page$/
-        "/movies/#{@movie}/edit"
+      when /^the home\s?page$/ then '/movies'
+      when /^the movies page$/ then '/movies'
+      when /^the edit page for "([^"]*)"/ then "/movies/#{getMovieId($1)}/edit"
+      when /^the details page for "(^"]*)"/ then "/movies/#{getMovieId($1)}"
+      when /^the Similar Movies page for "([^"]*)"/ then "/movies/#{getMovieId($1)}/similar"
+
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
