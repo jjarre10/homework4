@@ -47,8 +47,21 @@ describe MoviesController, :type => :controller do
     end
     
   end
+  
+  describe 'Filter/sort movies' do
+    it 'Sort by titles' do
+      get :index, {:sort => 'title'} #get the index, call sort
+      response.should redirect_to(movies_path(:sort => 'title')) #redirect after calling sort
+    end
+    
+    it 'Filters based on ratings' do
+      get :index, {:ratings => {:G => 1} } #get the index, if ratings is G it's 1
+      response.should redirect_to(movies_path(:ratings => { :G => 1})) #response should redirect to movies path with G where it's 1
+    end
+    
+  end
 
-end
+end #This ends the entire class
 =begin
 describe MoviesController, :type => :controller do
   describe 'adding director for an existing movie'
