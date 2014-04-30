@@ -16,9 +16,12 @@ module NavigationHelpers
     case @page_name
       when /^the home\s?page$/ then '/movies'
       when /^the movies page$/ then '/movies'
-      when /^the edit page for "([^"]*)"/ then "/movies/#{getMovieId($1)}/edit"
-      when /^the details page for "(^"]*)"/ then "/movies/#{getMovieId($1)}"
-      when /^the Similar Movies page for "([^"]*)"/ then "/movies/#{getMovieId($1)}/similar"
+      when /^the edit page for "([^"]*)"/ then '/movies/#{@movie}/edit'
+      when /^the details page for "(^"]*)"/ then "/movies/#{@movie}"
+      when /^the Similar Movies page for "([^"]*)"/ then "/movies/#{@movie}/similar"
+      when 'edit page' then "/movies/#{@movie}/edit"
+
+
 
 
     # Add more mappings here.

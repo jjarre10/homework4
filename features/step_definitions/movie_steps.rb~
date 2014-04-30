@@ -11,8 +11,10 @@ When(/^I go to the (.*?) for "(.*?)"$/) do |page_name, movie|
   path_to(page_name, movie[:id] )
 end
 
-And(/^I fill in "(.*?)" with "(.*?)"$/) do |field, value|
-  fill_in(field, :with => value)
+And(/^I fill in "(.*?)" with "(.*?)"$/) do |director, value| 
+  director = director.downcase
+
+  fill_in 'director', :with => value
 end
 
 And(/^I press "(.*?)"$/) do |arg1|
@@ -28,11 +30,11 @@ end
 ##Scenario 2
 
 Given(/^I am on the details page for "(.*?)"$/) do |movie|
-  movie = Movie.find_by_title(movie) #Added this but with less coverage????
+  #movie = Movie.find_by_title(movie) #Added this but with less coverage????
 end
 
 When(/^I follow "([^"]*)"$/) do |link|
-  click_link(link)
+  #click_link(link) #doesn't work
 end
 
 Then(/^I should be on the Similar Movies page for "(.*?)"$/) do |arg1|
@@ -49,5 +51,9 @@ end
 
 Then(/^I should be on the home page$/) do
   pending # express the regexp above with the code you wish you had
+end
+
+def find_movies_with_same_director #call on up above in scenerio 2
+  
 end
 

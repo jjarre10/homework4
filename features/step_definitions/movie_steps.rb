@@ -11,8 +11,10 @@ When(/^I go to the (.*?) for "(.*?)"$/) do |page_name, movie|
   path_to(page_name, movie[:id] )
 end
 
-And(/^I fill in "(.*?)" with "(.*?)"$/) do |field, value|
-  fill_in(field, :with => value)
+Then(/^I fill in "(.*?)" with "(.*?)"$/) do |director, value| 
+  director = director.downcase
+
+  fill_in 'director', :with => value
 end
 
 And(/^I press "(.*?)"$/) do |arg1|

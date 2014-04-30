@@ -21,8 +21,8 @@
 - if @same_dir
   %ul
     - @same_dir.each do |movie|
-        %li
-          %td= link_to "#{movie.title}", movie_path(movie)
+      %li
+        %td= link_to "#{movie.title}", movie_path(movie)
 
 = link_to 'Edit', edit_movie_path(@movie)
 = link_to 'Find movies with the same director', movie_path(@movie) + "/similar"
